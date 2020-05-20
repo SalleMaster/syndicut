@@ -13,6 +13,14 @@
   }
 }
 
+// Font Classes
+.font-primary {
+  font-family: 'Cormorant Garamond', serif;
+}
+.font-secondary {
+  font-family: 'Roboto', sans-serif;
+}
+
 // Responsive Media Queries
 @media (min-width: 540px) {
 }
@@ -79,6 +87,19 @@
     }
     .main-title {
       font-size: 3rem;
+    }
+  }
+}
+
+@media (min-width: 1450px) {
+  .header .header-wrapper {
+    padding: 0 8rem;
+
+    .subtitle {
+      font-size: 4.5rem;
+    }
+    .main-title {
+      font-size: 3.5rem;
     }
   }
 }

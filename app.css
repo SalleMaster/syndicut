@@ -212,6 +212,14 @@ a {
   font-weight: 410;
 }
 
+.font-primary {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-secondary {
+  font-family: 'Roboto', sans-serif;
+}
+
 @media (min-width: 720px) {
   .header .header-wrapper {
     display: flex;
@@ -269,4 +277,53 @@ a {
   .header .header-wrapper .main-title {
     font-size: 3rem;
   }
+}
+
+@media (min-width: 1450px) {
+  .header .header-wrapper {
+    padding: 0 8rem;
+  }
+  .header .header-wrapper .subtitle {
+    font-size: 4.5rem;
+  }
+  .header .header-wrapper .main-title {
+    font-size: 3.5rem;
+  }
+}
+
+.video-link {
+  width: 100%;
+  height: 100vh;
+  transform: scale(0.95);
+}
+
+.video-link .video-link-wrapper {
+  position: relative;
+}
+
+.video-link .video-link-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-link .video-link-wrapper .video-footer-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 3rem 2rem;
+  opacity: 0;
+}
+
+.video-link .video-link-wrapper .video-footer-wrapper .subtitle {
+  color: #fefefe;
+  font-size: 0.8rem;
+  font-weight: 510;
+  margin-bottom: 0.5rem;
+}
+
+.video-link .video-link-wrapper .video-footer-wrapper .title {
+  color: #fefefe;
+  font-size: 2rem;
+  font-weight: 510;
 }
