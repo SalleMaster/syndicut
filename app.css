@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding: 0 15px;
+}
+
+@media (min-width: 540px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 720px) {
+  .container {
+    padding: 0 25px;
+  }
+}
+
+@media (min-width: 960px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: 1140px) {
+  .container {
+    padding: 0 80px;
+  }
+}
+
+.main-nav {
+  position: relative;
+  z-index: 1000;
+}
+
+.main-nav .nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.main-nav .nav-wrapper .navbar-brand {
+  width: 150px;
+  transition: all 0.2s ease-in-out;
+}
+
+.main-nav .nav-wrapper .navbar-brand:hover {
+  opacity: 0.5;
+}
+
+.main-nav .nav-wrapper .navbar-brand.active svg {
+  transition: all 0.3s ease-in-out;
+  fill: #fefefe;
+}
+
+.main-nav .nav-wrapper .navbar-links {
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0a0a0a;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.main-nav .nav-wrapper .navbar-links.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.main-nav .nav-wrapper .navbar-links .navbar-link {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.main-nav .nav-wrapper .navbar-links .navbar-link .navbar-link-item {
+  color: #fefefe;
+}
+
+.main-nav .nav-wrapper .navbar-menu-toggle {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.main-nav .nav-wrapper .navbar-menu-toggle:before, .main-nav .nav-wrapper .navbar-menu-toggle:after {
+  position: absolute;
+  left: 0;
+  content: '';
+  height: 2px;
+  width: 100%;
+  background: #0a0a0a;
+  transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  transform-origin: center;
+}
+
+.main-nav .nav-wrapper .navbar-menu-toggle:before {
+  transform: translateY(-5px);
+}
+
+.main-nav .nav-wrapper .navbar-menu-toggle:after {
+  transform: translateY(5px);
+}
+
+.main-nav .nav-wrapper .navbar-menu-toggle.active:before {
+  transform: rotate(45deg);
+  background: #fefefe;
+}
+
+.main-nav .nav-wrapper .navbar-menu-toggle.active:after {
+  transform: rotate(-45deg);
+  background: #fefefe;
+}
+
+@media (min-width: 720px) {
+  .navbar-menu-toggle {
+    display: none;
+  }
+  .main-nav .nav-wrapper {
+    padding: 2rem 0;
+  }
+  .main-nav .nav-wrapper .navbar-brand.active svg {
+    fill: #0a0a0a;
+  }
+  .main-nav .nav-wrapper .navbar-links {
+    opacity: 1;
+    visibility: visible;
+    position: inherit;
+    min-height: auto;
+    width: auto;
+    background: none;
+    z-index: 0;
+  }
+  .main-nav .nav-wrapper .navbar-links .navbar-links-wrapper {
+    display: flex;
+  }
+  .main-nav .nav-wrapper .navbar-links .navbar-links-wrapper .navbar-link {
+    margin-bottom: 0;
+    margin-left: 3rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 710;
+  }
+  .main-nav .nav-wrapper .navbar-links .navbar-links-wrapper .navbar-link .navbar-link-item {
+    color: #0a0a0a;
+    position: relative;
+  }
+  .main-nav .nav-wrapper .navbar-links .navbar-links-wrapper .navbar-link .navbar-link-item:after {
+    position: absolute;
+    content: '';
+    display: block;
+    bottom: -1px;
+    left: 0;
+    height: 1px;
+    width: 101%;
+    background: #0a0a0a;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .main-nav .nav-wrapper .navbar-links .navbar-links-wrapper .navbar-link .navbar-link-item:hover:after {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+
+@media (min-width: 1040px) {
+  .main-nav .nav-wrapper .navbar-brand {
+    width: 200px;
+  }
+}
+
+.header {
+  margin: 3rem 0;
+}
+
+.header .subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.header .main-title {
+  font-size: 3rem;
+  font-weight: 410;
+}
+
+@media (min-width: 720px) {
+  .header .header-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .header .header-wrapper:before {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: -50%;
+    width: 1px;
+    height: 200%;
+    background: #0a0a0a;
+    transform: rotate(45deg);
+  }
+  .header .header-wrapper .subtitle,
+  .header .header-wrapper .main-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 510;
+    opacity: 1;
+    width: 40%;
+  }
+  .header .header-wrapper .main-title {
+    margin-left: auto;
+    margin-top: 2rem;
+    font-weight: 410;
+  }
+}
+
+@media (min-width: 960px) {
+  .header .header-wrapper .subtitle,
+  .header .header-wrapper .main-title {
+    font-weight: 510;
+  }
+  .header .header-wrapper .subtitle {
+    font-size: 3.5rem;
+  }
+  .header .header-wrapper .main-title {
+    font-size: 2.5rem;
+    font-weight: 410;
+  }
+}
+
+@media (min-width: 1140px) {
+  .header .header-wrapper {
+    padding: 0 5rem;
+  }
+  .header .header-wrapper .subtitle {
+    font-size: 4rem;
+  }
+  .header .header-wrapper .main-title {
+    font-size: 3rem;
+  }
+}
