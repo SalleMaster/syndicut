@@ -61,6 +61,18 @@
   }
 }
 
+// Disable scroll when nav is active
+.nav-active {
+  overflow: hidden;
+}
+
+// Responsive Media Queries
+@media (min-width: 720px) {
+  .nav-active {
+    overflow: scroll;
+  }
+}
+
 @media (min-width: 960px) {
   .header .header-wrapper {
     .subtitle,
