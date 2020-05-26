@@ -333,14 +333,43 @@ a {
   font-family: 'Roboto', sans-serif;
 }
 
+.gallery-item-card {
+  color: #0a0a0a;
+}
+
 .gallery-item-card .image-wrapper {
   overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.gallery-item-card .image-wrapper:before {
+  display: block;
+  content: '';
+  padding-top: 75%;
+  width: 100%;
 }
 
 .gallery-item-card .image-wrapper .card-image {
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   height: 100%;
+  width: 100%;
+  object-fit: cover;
   transition: all 0.8s ease-in-out;
+}
+
+.gallery-item-card .card-title {
+  font-size: 0.8rem;
+  font-weight: 510;
+}
+
+.gallery-item-card .card-description {
+  font-size: 2rem;
+  font-weight: 410;
 }
 
 .gallery-item-card:hover .card-image {
@@ -469,6 +498,12 @@ a {
   padding: 2rem 0;
 }
 
+.main-gallery .main-gallery-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
 @media (min-width: 720px) {
   .video-link .video-link-wrapper .video-footer-wrapper {
     padding: 3rem 5rem;
@@ -479,6 +514,72 @@ a {
   .video-link .video-link-wrapper .video-footer-wrapper .title {
     font-size: 2.5rem;
   }
+  .main-gallery .main-gallery-wrapper {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .main-gallery .main-gallery-wrapper .span-2 {
+    grid-column: span 2;
+  }
+  .main-gallery .main-gallery-wrapper .span-3 {
+    grid-column: span 3;
+  }
+  .main-gallery .main-gallery-wrapper .span-4 {
+    grid-column: span 4;
+  }
+  .main-gallery .main-gallery-wrapper .span-6 {
+    grid-column: span 6;
+  }
+}
+
+.vimeo-video {
+  margin: 5rem 0;
+}
+
+.vimeo-video .vimeo-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 65%;
+  background: #0a0a0a;
+}
+
+.vimeo-video .vimeo-video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vimeo-video .vimeo-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.vimeo-video .vimeo-video-wrapper iframe.vissible {
+  opacity: 1;
+}
+
+.vimeo-video .vimeo-video-wrapper .vimeo-play-button {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  text-indent: -9000px;
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  cursor: url("./img/play-cursor.png"), auto;
+  background-color: transparent;
+  border: none;
 }
 
 @media (min-width: 960px) {

@@ -37,6 +37,12 @@
 
 .main-gallery {
   padding: 2rem 0;
+
+  .main-gallery-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 // Responsive Media Queries
@@ -53,6 +59,77 @@
 
     .title {
       font-size: 2.5rem;
+    }
+  }
+
+  .main-gallery .main-gallery-wrapper {
+    grid-template-columns: repeat(6, 1fr);
+
+    .span-2 {
+      grid-column: span 2;
+    }
+
+    .span-3 {
+      grid-column: span 3;
+    }
+
+    .span-4 {
+      grid-column: span 4;
+    }
+
+    .span-6 {
+      grid-column: span 6;
+    }
+  }
+}
+
+.vimeo-video {
+  margin: 5rem 0;
+
+  .vimeo-video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 65%;
+    background: $black;
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease;
+
+      &.vissible {
+        opacity: 1;
+      }
+    }
+
+    .vimeo-play-button {
+      position: absolute;
+      display: block;
+      overflow: hidden;
+      text-indent: -9000px;
+      height: 100%;
+      width: 100%;
+      z-index: 200;
+      top: 0;
+      left: 0;
+      cursor: url('./img/play-cursor.png'), auto;
+      background-color: transparent;
+      border: none;
     }
   }
 }

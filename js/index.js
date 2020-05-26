@@ -25,3 +25,16 @@ const scene = new ScrollMagic.Scene({
   //   .addIndicators()
   .setPin('.video-link')
   .addTo(controller);
+
+// Vimeo Video Play
+const backgroundVideo = document.querySelector('.background-video');
+const vimeoPlayButton = document.querySelector('.vimeo-play-button');
+const vimeoVideo = document.querySelector('.vimeo');
+
+const playVideo = () => {
+  vimeoPlayButton.style.display = 'none';
+  backgroundVideo.style.display = 'none';
+  vimeoVideo.classList.add('vissible');
+};
+
+vimeoPlayButton.addEventListener('click', playVideo);
