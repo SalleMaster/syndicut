@@ -197,6 +197,118 @@ a {
   }
 }
 
+.main-footer {
+  background: #0a0a0a;
+  color: #fefefe;
+  padding: 5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.main-footer .footer-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.main-footer .footer-wrapper .footer-header {
+  width: 200px;
+  justify-self: center;
+  grid-column: span 2;
+  margin-bottom: 3rem;
+}
+
+.main-footer .footer-wrapper .footer-header svg {
+  fill: #fefefe;
+}
+
+.main-footer .footer-wrapper .footer-box {
+  font-weight: 510;
+}
+
+.main-footer .footer-wrapper .footer-box .footer-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.main-footer .footer-wrapper .footer-box .footer-list-item {
+  margin-bottom: 0.5rem;
+}
+
+.main-footer .footer-wrapper .footer-bottom {
+  grid-column: span 2;
+}
+
+.footer-link {
+  color: #fefefe;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  position: relative;
+}
+
+.footer-link:after {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #fefefe;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-link:hover:after {
+  opacity: 0;
+}
+
+.footer-list.social-links-list {
+  display: flex;
+}
+
+.footer-list.social-links-list .footer-list-item {
+  margin-right: 1rem;
+  font-size: 2rem;
+  transition: opacity 0.2s ease;
+}
+
+.footer-list.social-links-list .footer-list-item:hover {
+  opacity: 0.5;
+}
+
+.footer-list.social-links-list .footer-list-item .social-link {
+  color: #fefefe;
+}
+
+.footer-bottom-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-list .footer-bottom-list-item {
+  font-size: 0.8rem;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom-list .footer-bottom-list-item .footer-link {
+  font-size: 0.7rem;
+}
+
+@media (min-width: 720px) {
+  .main-footer .footer-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .main-footer .footer-wrapper .footer-header {
+    grid-column: span 3;
+  }
+  .main-footer .footer-wrapper .footer-bottom {
+    grid-column: span 3;
+  }
+}
+
 .header {
   margin: 3rem 0;
 }
