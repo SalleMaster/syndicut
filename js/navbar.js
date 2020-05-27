@@ -11,3 +11,17 @@ const toggleNavbar = () => {
 };
 
 navbarMenuToggle.addEventListener('click', toggleNavbar);
+
+// Fade Out Animation
+const navbarLinkItems = document.querySelectorAll('.navbar-link-item');
+const main = document.querySelector('main');
+
+const fadeOut = () => {
+  main.classList.add('fade-out');
+};
+
+navbarLinkItems.forEach((link) => {
+  link.addEventListener('click', fadeOut);
+});
+
+navbarBrand.addEventListener('click', fadeOut);

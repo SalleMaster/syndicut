@@ -10,6 +10,17 @@
   .main-title {
     font-size: 3rem;
     font-weight: 410;
+
+    &.line-height-sm {
+      line-height: 0.7;
+      margin-bottom: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .text-small {
+      font-size: 0.9rem;
+      opacity: 0.5;
+    }
   }
 }
 
@@ -19,6 +30,29 @@
 }
 .font-secondary {
   font-family: 'Roboto', sans-serif;
+}
+
+// Fade In Animation
+.fade-in {
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// Fade Out
+.fade-out {
+  transition: opacity 0.5s ease;
+  opacity: 0;
 }
 
 // Gallery Card
@@ -53,11 +87,13 @@
   .card-title {
     font-size: 0.8rem;
     font-weight: 510;
+    padding-left: 2rem;
   }
 
   .card-description {
     font-size: 2rem;
     font-weight: 410;
+    padding-left: 2rem;
   }
 
   &:hover {
@@ -67,11 +103,17 @@
   }
 }
 
-// Responsive Media Queries
-@media (min-width: 540px) {
+// Disable scroll when nav is active
+.nav-active {
+  overflow: hidden;
 }
 
+// Responsive Media Queries
 @media (min-width: 720px) {
+  .nav-active {
+    overflow: scroll;
+  }
+
   .header .header-wrapper {
     display: flex;
     flex-direction: column;
@@ -107,18 +149,6 @@
   }
 }
 
-// Disable scroll when nav is active
-.nav-active {
-  overflow: hidden;
-}
-
-// Responsive Media Queries
-@media (min-width: 720px) {
-  .nav-active {
-    overflow: scroll;
-  }
-}
-
 @media (min-width: 960px) {
   .header .header-wrapper {
     .subtitle,
@@ -137,6 +167,11 @@
 }
 
 @media (min-width: 1140px) {
+  .gallery-item-card .card-description {
+    font-size: 2.5rem;
+    font-weight: 510;
+  }
+
   .header .header-wrapper {
     padding: 0 5rem;
 
