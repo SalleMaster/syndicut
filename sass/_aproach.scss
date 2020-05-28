@@ -122,3 +122,67 @@
     }
   }
 }
+
+@media (min-width: 1040px) {
+  .aproach-articles .aproach-articles-wrapper {
+    .aproach-article {
+      padding-bottom: 4rem;
+      margin-bottom: 2.5rem;
+
+      .article-title {
+        font-size: 5rem;
+        font-weight: 510;
+      }
+
+      .article-desc {
+        width: 70%;
+        margin-bottom: 3rem;
+        line-height: 2;
+      }
+
+      .article-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1300px) {
+  .aproach-articles .aproach-articles-wrapper {
+    margin-top: 5rem;
+
+    .aproach-article {
+      padding-bottom: 4rem;
+      margin-bottom: 2.5rem;
+
+      .article-title {
+        font-size: 9rem;
+      }
+
+      .article-desc {
+        width: 70%;
+        margin-bottom: 5rem;
+        line-height: 2;
+        font-size: 1.5rem;
+      }
+
+      .article-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+
+        .article-list-item {
+          font-size: 2rem;
+
+          .sub-list-item,
+          .article-list-link {
+            font-size: 1.3rem;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}

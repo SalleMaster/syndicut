@@ -132,6 +132,12 @@
           color: $black;
           position: relative;
 
+          &.active {
+            &:after {
+              transform: scaleX(1);
+            }
+          }
+
           &:after {
             position: absolute;
             content: '';

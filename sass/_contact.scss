@@ -1,0 +1,407 @@
+.contact-header {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 510;
+  }
+}
+
+.contact-form-section {
+  margin-bottom: 3rem;
+
+  .contact-info {
+    .info-summary {
+      opacity: 0.8;
+      line-height: 1.7;
+    }
+
+    .info-box {
+      margin: 2rem 0;
+
+      .info-title {
+        font-size: 1.3rem;
+        font-weight: 510;
+        margin-bottom: 0.6rem;
+      }
+
+      .info-paragraph {
+        opacity: 0.8;
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .info-list {
+        .info-list-item {
+          margin-bottom: 0.7rem;
+          font-size: 0.9rem;
+          opacity: 0.8;
+
+          .icon {
+            display: inline-block;
+            text-align: center;
+            width: 20px;
+          }
+
+          .info-list-link {
+            color: $black;
+            position: relative;
+
+            &:after {
+              position: absolute;
+              content: '';
+              bottom: -3px;
+              left: 0;
+              width: 100%;
+              height: 1px;
+              background: $black;
+              transition: opacity 0.3s ease-in-out;
+            }
+
+            &:hover {
+              &:after {
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact-form-wrapper {
+  padding: 2rem;
+  background: $black;
+  color: $white;
+
+  .contact-form-title {
+    font-size: 2rem;
+    font-weight: 510;
+    margin-bottom: 1rem;
+  }
+
+  .contact-form-paragraph {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .contact-form {
+    display: grid;
+    grid-template-areas:
+      'firstName'
+      'lastName'
+      'email'
+      'phone'
+      'company'
+      'message'
+      'confirm'
+      'submit';
+    gap: 2rem;
+
+    .first-name-field {
+      grid-area: firstName;
+    }
+
+    .last-name-field {
+      grid-area: lastName;
+    }
+
+    .email-field {
+      grid-area: email;
+    }
+
+    .phone-field {
+      grid-area: phone;
+    }
+
+    .company-field {
+      grid-area: company;
+    }
+
+    .message-field {
+      grid-area: message;
+    }
+
+    .form-checkbox-field {
+      grid-area: confirm;
+    }
+
+    .submit-field {
+      grid-area: submit;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+
+      .form-label {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .form-input {
+        background: $black;
+        color: $white;
+        border: none;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid lighten($color: #000000, $amount: 50);
+        transition: all 0.2s ease-in-out;
+
+        &:focus {
+          border-bottom: 1px solid $white;
+        }
+      }
+
+      &:hover {
+        .form-input {
+          border-bottom: 1px solid $white;
+        }
+      }
+
+      //   Checkbox Filed
+      &.form-checkbox-field {
+        flex-direction: row;
+        align-items: flex-start;
+
+        .checkbox {
+          display: none;
+          visibility: hidden;
+          opacity: 0;
+          position: absolute;
+          left: -9000px;
+        }
+
+        .form-label {
+          position: relative;
+          padding-left: 40px;
+          font-size: 0.9rem;
+          line-height: 1.5;
+
+          .link-underline {
+            color: $white;
+            border-bottom: 1px solid $white;
+
+            &:hover {
+              border-bottom: none;
+            }
+          }
+
+          &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            display: inline-block;
+            height: 25px;
+            width: 25px;
+            border: 1px solid $white;
+          }
+
+          &:after {
+            position: absolute;
+            top: 8.5px;
+            left: 8.5px;
+            content: '';
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            background: $white;
+          }
+        }
+
+        .checkbox + .form-label:after {
+          background: none;
+        }
+
+        .checkbox:checked + .form-label:after {
+          background: $white;
+        }
+      }
+
+      //   Submit Button
+      .form-submit {
+        display: inline-block;
+        margin-right: auto;
+        padding: 0.7rem;
+        background: $white;
+        color: $black;
+        border: none;
+        font-weight: 510;
+        font-size: 1.2rem;
+        transition: all 0.2s ease-in-out;
+
+        &:hover,
+        &:active {
+          background: lighten($color: #000000, $amount: 50);
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Media Queries
+@media (min-width: 720px) {
+  .contact-header {
+    h1 {
+      font-size: 3.5rem;
+    }
+  }
+
+  .contact-form-section {
+    .contact-form-section-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      .contact-info {
+        .info-box {
+          margin: 5rem 0;
+        }
+      }
+
+      .contact-form {
+        grid-template-areas:
+          'firstName lastName'
+          'email phone'
+          'company company'
+          'message message'
+          'confirm confirm'
+          'submit submit';
+      }
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .contact-header {
+    h1 {
+      font-size: 5rem;
+    }
+  }
+
+  .contact-form-section {
+    .contact-form-section-wrapper {
+      .contact-info {
+        .info-summary {
+          font-size: 1.3rem;
+        }
+
+        .info-box {
+          .info-title {
+            font-size: 2rem;
+          }
+
+          .info-paragraph {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+          }
+
+          .info-list {
+            .info-list-item {
+              font-size: 1.2rem;
+              margin-bottom: 1.5rem;
+            }
+          }
+        }
+      }
+
+      .contact-form-wrapper {
+        .contact-form-title {
+          font-size: 3rem;
+        }
+
+        .contact-form-paragraph {
+          font-size: 1.2rem;
+          margin-bottom: 2rem;
+        }
+
+        .contact-form {
+          .form-field {
+            .form-label {
+              font-size: 1rem;
+            }
+
+            .form-input {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1040px) {
+  .contact-header {
+    h1 {
+      font-size: 8rem;
+    }
+  }
+
+  .contact-form-section {
+    .contact-form-section-wrapper {
+      .contact-info {
+        .info-summary {
+          font-size: 1.7rem;
+        }
+
+        .info-box {
+          .info-title {
+            font-size: 3rem;
+          }
+
+          .info-paragraph {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+          }
+
+          .info-list {
+            .info-list-item {
+              .icon {
+                margin-right: 1rem;
+              }
+
+              font-size: 1.5rem;
+              margin-bottom: 1.5rem;
+            }
+          }
+        }
+      }
+
+      .contact-form-wrapper {
+        padding: 4rem;
+        .contact-form-title {
+          font-size: 4.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .contact-form-paragraph {
+          font-size: 1.8rem;
+          margin-bottom: 2rem;
+        }
+
+        .contact-form {
+          .form-field {
+            .form-label {
+              font-size: 1.5rem;
+            }
+
+            .form-input {
+              font-size: 1.5rem;
+            }
+
+            .form-submit {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
