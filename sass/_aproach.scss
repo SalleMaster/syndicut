@@ -1,0 +1,124 @@
+.aproach-articles {
+  margin: 3rem 0;
+
+  .aproach-articles-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    .aproach-article {
+      padding-bottom: 2rem;
+      border-bottom: 1px solid $black;
+
+      .article-title {
+        font-size: 3rem;
+        font-weight: 410;
+        margin-bottom: 0.5rem;
+      }
+
+      .article-desc {
+        opacity: 0.8;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
+
+      .article-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        .article-list-item {
+          font-size: 1.3rem;
+          font-weight: 510;
+          opacity: 0.8;
+
+          .sub-list-item {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            opacity: 0.8;
+            font-weight: 410;
+            margin-top: 1rem;
+          }
+
+          .article-list-link {
+            position: relative;
+            display: inline-block;
+            color: $black;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+
+            &:after {
+              position: absolute;
+              content: '';
+              bottom: -2px;
+              left: 0;
+              width: 100%;
+              height: 1px;
+              background: $black;
+              opacity: 0.8;
+              transition: all 0.3s ease-in-out;
+            }
+
+            &:hover {
+              &:after {
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Media Queries
+@media (min-width: 720px) {
+  .aproach-articles .aproach-articles-wrapper {
+    .aproach-article {
+      padding-bottom: 4rem;
+      margin-bottom: 2.5rem;
+
+      .article-title {
+        font-size: 4rem;
+      }
+
+      .article-desc {
+        width: 70%;
+        margin-bottom: 3rem;
+        line-height: 2;
+      }
+
+      .article-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .aproach-articles .aproach-articles-wrapper {
+    .aproach-article {
+      padding-bottom: 4rem;
+      margin-bottom: 2.5rem;
+
+      .article-title {
+        font-size: 4rem;
+      }
+
+      .article-desc {
+        width: 70%;
+        margin-bottom: 3rem;
+        line-height: 2;
+      }
+
+      .article-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+      }
+    }
+  }
+}
